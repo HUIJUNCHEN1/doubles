@@ -1,30 +1,51 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="app">
+    <Htabbar></Htabbar>
+    <router-view></router-view>
+    <h1 class="case">联系我们</h1>
+    <h3 class="cases">CONTECT US</h3>
+    <Contect></Contect>
   </div>
-  <router-view/>
 </template>
 
+<script>
+import Htabbar from "../src/components/tabbar/Htabbar.vue";
+import Contect from "../src/components/contect/contect.vue";
+
+export default {
+  name: "App",
+  components: {
+    Htabbar,
+    Contect,
+  },
+};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+  margin: 0;
+  padding: 0;
 }
-
-#nav {
-  padding: 30px;
+body {
+  /* background-color: black; */
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.Hswiper {
+  margin: 20px auto;
+  width: 85%;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.case {
+  display: inline-block;
+  margin-left: 20px;
+  font-weight: normal;
+  border-bottom: 1px solid rgb(100, 100, 100);
+}
+.cases {
+  display: inline-block;
+  margin-left: 5px;
+  color: rgb(95, 95, 94);
+}
+.Hcase {
+  margin: 20px auto;
+  width: 85%;
 }
 </style>
